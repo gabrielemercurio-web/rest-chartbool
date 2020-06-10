@@ -2,10 +2,12 @@
     max-width: 1200px;
     margin: auto;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
-#myChart {
+#ChartLine, #ChartPie {
     max-width: 700px;
+    padding: 50px 0px;
 }
