@@ -14,6 +14,10 @@ $(document).ready(function() {
             for (var i = 0; i < data.length; i++) {
                 var dati_venditore = data[i];
 
+                if (!dati_venditore.hasOwnProperty('date')) {
+                    continue;
+                }
+
                 var data_corrente = dati_venditore.date;   // leggo la data di ogni oggetto
 
                 var fatturato_corrente = dati_venditore.amount;
@@ -24,7 +28,7 @@ $(document).ready(function() {
 
                 var data_moment = moment(data_corrente, 'DD/MM/YYYY');
 
-                var mese_corrente = data_moment.format('MMMM'); // trasformare il numero del mese in lettere
+                var mese_corrente = data_moment.format('MMM'); // trasformare il numero del mese in lettere
 
                 if (!mesi.hasOwnProperty(mese_corrente)) {
 
@@ -129,8 +133,32 @@ $(document).ready(function() {
         'error': function () {
             console.log('Errore!');
         }
+    }); // <-- FINE CHIAMATA GET in AJAX per creare i GRAFICI
+
+    $('#form button').on('click', function () {
+
+        $.ajax ({
+            'url': 'http://157.230.17.132:4013/sales',
+            'method': 'POST',
+            'data': {
+                "salesman": "Riccardo",
+                "amount": 2200,
+                "date": "20/04/2017",
+            },
+
+            'success': function(data) {
+
+
+            },
+
+            'error': function () {
+                console.log('Errore!');
+            }
+        });
 
     });
+
+
 
 });
 

@@ -14,10 +14,24 @@
     </head>
     <body>
 
-        <div class="container">
+        <div id="form" class="container">
+            <div class="select">
+                <select class="venditore">
+                    <option value="venditore">Venditore</option>
+                </select>
+                <select class="mese">
+                    <option value="mese">Mese</option>
+                </select>
+            </div>
+            <input type="text" placeholder="Valore vendita...">
+            <button>INVIA</button>
+        </div>
+
+        <div id="grafici" class="container">
             <canvas id="ChartLine"></canvas>
             <canvas id="ChartPie"></canvas>
         </div>
+
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

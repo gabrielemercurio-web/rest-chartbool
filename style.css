@@ -1,13 +1,53 @@
+
+
 .container {
     max-width: 1200px;
     margin: auto;
+}
+
+#grafici {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-
 #ChartLine, #ChartPie {
     max-width: 700px;
+    height: auto;
     padding: 50px 0px;
+}
+
+
+#form {
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#form input {
+    width: 200px;
+    padding: 5px;
+    outline: none;
+    margin: 20px 0px;
+}
+
+#form button {
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 0px;
+    box-shadow: none;
+    transition: 200ms ease-out;
+}
+
+#form button:hover {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+#form button:active {
+    transform: scale(0.92);
 }
